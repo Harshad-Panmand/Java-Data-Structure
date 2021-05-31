@@ -7,20 +7,22 @@
  * The space complexity for Bubble Sort is O(1),
  * because only a single additional memory space is required
  * i.e. for temp variable.
+ * <p>
+ * Unstable Sort
  */
 public class BubbleSort {
 
     public static void main(String[] args) {
 
-        int[] unsortedArray = {20, 35, -15, 7, 55, 1, -22};
-        int[] sortedArray = bubbleSort(unsortedArray);
-        for (int index = 0; index < sortedArray.length; index++) {
-            System.out.println(sortedArray[index]);
+        int[] intArray = {20, 35, -15, 7, 55, 1, -22};
+        bubbleSort(intArray);
+        for (int index = 0; index < intArray.length; index++) {
+            System.out.println(intArray[index]);
         }
 
     }
 
-    public static int[] bubbleSort(int[] intArray) {
+    public static void bubbleSort(int[] intArray) {
 
         boolean alreadySorted = true;
         for (int lastUnsortedIndex = intArray.length - 1; lastUnsortedIndex > 0; lastUnsortedIndex--) {
@@ -41,7 +43,6 @@ public class BubbleSort {
                 break;
             }
         }
-        return intArray;
     }
 
     public static void swap(int[] intArray, int firstIndex, int lastIndex) {
